@@ -1,3 +1,3 @@
-import Datepicker from './datepicker.component'
+import Datepicker from './datepicker.component.jsx'
 
 export default Datepicker

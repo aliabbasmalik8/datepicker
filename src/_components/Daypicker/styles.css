@@ -1,0 +1,103 @@
+.day-picker-banner{
+  width: 300px;
+  min-height: 300px;
+  background: #fff;
+  box-shadow: 10px 10px 40px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.day-picker-head,
+.day-name, 
+.day-picker-body,
+.day-picker-day span,
+.day-picker-day,
+.day-container,
+.day-picker{
+  position: relative;
+  display: block;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.day-picker-head{ 
+  height: 30px;
+  width: 100%;
+  margin-top: 10px;
+}
+.day-name{ 
+  width: 14.285%;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #666;
+  font-size: 9px;
+  text-align: center;
+}
+.day-picker-body{ 
+  height: 270px;
+  width: 100%;
+}
+.day-container{ 
+  width: 14.285%;
+  height: 16.6666%;
+}
+.day-picker-day{
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  font-weight: 300;
+  color: #444;
+  text-align: center;
+}
+.day-picker-day span{ 
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  font-weight: 300;
+  color: #444;
+}
+
+.day-picker-day span:hover{
+  cursor: pointer;
+  background: #eee;
+} 
+.day-picker-day span{
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  left: 50%;
+  top: 50%;
+  font-weight: 400;
+  border-radius: 100%;
+  line-height: 30px;
+}
+.day-container.disabled{
+  pointer-events: none;
+}
+
+.day-container.disabled .day-picker-day span{
+  color: #ddd;
+}
+.day-container.disabled .day-picker-day span{
+  background: #fff!important;
+}
+.day-container.highlight .day-picker-day span{
+  background: #efdbca;
+}
+.day-container.highlight-green .day-picker-day span{
+  background: #83c25b;
+}
+.month-handler{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.month-handler-arrow{
+  cursor: pointer;
+}
