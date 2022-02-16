@@ -1,5 +1,7 @@
+import { AppState } from '../../App/app.interfaces'
+ 
 export interface DayPickerState {
-  state: any,
+  state: AppState,
   monthHandler: (offset: number) => void,
-  setDay: (day: any) => void,
+  setDay: (day: number) => void,
 }
