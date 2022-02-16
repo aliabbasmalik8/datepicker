@@ -1,11 +1,11 @@
 const daysMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 export const monthMap = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-const getNumberOfDays =(year, month)=> {
+const getNumberOfDays =(year: number, month: number)=> {
   return 40 - new Date(year, month, 40).getDate();
 }
 
-const getDayDetails = (args) => {
+const getDayDetails = (args: any) => {
   let date = args.index - args.firstDay; 
   let day = args.index % 7;
   let prevMonth = args.month-1;
@@ -27,7 +27,7 @@ const getDayDetails = (args) => {
   }
 }
 
-export const getMonthDetails =(year, month)=> {
+export const getMonthDetails =(year: number, month: number)=> {
   let firstDay = (new Date(year, month)).getDay();
   let numberOfDays = getNumberOfDays(year, month);
   let monthArray = [];
@@ -36,7 +36,7 @@ export const getMonthDetails =(year, month)=> {
   let index = 0; 
   let cols = 7;
 
-  for(let row=0; row<rows; row++) {
+  for(let row=0; row < rows; row ++) {
     for(let col=0; col<cols; col++) { 
       currentDay = getDayDetails({
         index,

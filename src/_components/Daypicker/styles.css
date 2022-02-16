@@ -6,6 +6,8 @@
   border-radius: 20px;
   overflow: hidden;
   padding: 10px;
+  max-width: calc(100% - 20px);
+  margin: auto;
 }
 
 .day-picker-head,

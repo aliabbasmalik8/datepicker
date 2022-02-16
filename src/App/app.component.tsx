@@ -1,8 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import { buildStore } from '../redux'
-import { appReducer } from './app.reducer';
+import store from '../redux'
 
 import {
   CSSLibrary,
@@ -10,8 +9,6 @@ import {
 
 import AppDatepicker from './AppDatepicker/'
 import AppDatepickerControls from './AppDatepickerControls/'
-
-const store = buildStore(appReducer)
 
 const App: React.FC = () => {
   return (

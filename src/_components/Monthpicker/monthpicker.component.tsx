@@ -2,12 +2,14 @@ import React from 'react';
 
 import { monthMap } from '../Datepicker/datepicker.utils';
 
+import { MonthPickerState } from './monthpicker.interfaces'
+
 import './styles.css';
 
 function MonthPicker({
   state,
   setMonth
-}){
+}: MonthPickerState){
   
   return (
     <div className='month-picker'>

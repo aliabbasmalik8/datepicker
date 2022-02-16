@@ -1,4 +1,8 @@
 import * as React from 'react'
+import { useDispatch, useSelector } from "react-redux"
+
+import { appState } from '../../App/app.selectors'
+import { setDateAttributes } from '../../App/app.actions';
 
 import {
   CSSLibrary,
@@ -6,17 +10,22 @@ import {
 
 import Checkbox from '../Checkbox/'
 
-const DatepickerControls: React.FunctionComponent<DatepickerControlsProps> = ({
-  selectDateRange,
-}) => {
+const DatepickerControls: React.FunctionComponent<DatepickerControlsProps> = () => {
+  const dispatch = useDispatch();
+  const state = useSelector(appState);
+
+  const checkBoxHandler = (value: boolean) => {
+    dispatch(setDateAttributes({useDateRange: value}))
+  }
 
   return (
     <div style={styles.root}>
       <Checkbox
         label="Select Date Range"
         name="selectDateRange"
-        value={!selectDateRange}
-        checked={selectDateRange}
+        value={!state?.useDateRange}
+        checked={state.useDateRange}
+        onChange={(value) => checkBoxHandler(value)}
       />
     </div>
   )
@@ -28,7 +37,6 @@ const styles: CSSLibrary = {
 }
 
 interface DatepickerControlsProps {
-  selectDateRange: boolean,
 }
 
 export default DatepickerControls

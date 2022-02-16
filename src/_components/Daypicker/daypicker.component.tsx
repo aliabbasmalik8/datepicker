@@ -3,19 +3,21 @@ import moment from 'moment';
 
 import { monthMap } from '../Datepicker/datepicker.utils';
 
+import { DayPickerState } from './daypicker.interfaces'
+
 import './styles.css';
 
 function DayPicker({
   state,
   monthHandler,
   setDay,
-}){
-  const getMonth = month => monthMap[Math.max(Math.min(11, month), 0)] || 'Month'
-  const isCurrentDay = day =>  moment().isSame(day.timestamp, 'day');
-  const isSelectedDay = day =>  moment(day.timestamp).isSame(state.selectedDay, 'day');
+}: DayPickerState){
+  const getMonth = (month: number) => monthMap[Math.max(Math.min(11, month), 0)] || 'Month'
+  const isCurrentDay = (day: any) =>  moment().isSame(day.timestamp, 'day');
+  const isSelectedDay = (day: any) =>  moment(day.timestamp).isSame(state.selectedDay, 'day');
   
   const daysMarkup = (
-    state.monthDetails.map((day, index) => (
+    state.monthDetails.map((day: any, index: number) => (
       <div className={'day-container ' + (day.month !== 0 ? ' disabled' : '') + 
           (isCurrentDay(day) ? ' highlight' : '') + (isSelectedDay(day) ? ' highlight-green' : '')} key={index}>
           <div className='day-picker-day'>
@@ -30,7 +32,7 @@ function DayPicker({
     <div className='day-picker-banner'>
       <div className='month-handler'>
         <div onClick={() => monthHandler(-1)} className='month-handler-arrow'>{'<'}</div>
-        <div>{getMonth(state.month)}</div>
+        <div>{getMonth(state.month)} {state.year}</div>
         <div onClick={() => monthHandler(1)} className='month-handler-arrow'>{'>'}</div>
       </div>
       <div className='day-picker'>
